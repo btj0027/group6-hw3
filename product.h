@@ -12,8 +12,14 @@ struct product
 	std::string description;
 	double price;
 
+	// default constructor
+	product();
+	// parameterized constructor
+	product(std::string name, std::string description, double price);
+	
 	//prints information about one transaction
 	std::string product_info();
+
 };
 #endif
 

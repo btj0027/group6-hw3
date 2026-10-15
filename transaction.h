@@ -15,6 +15,10 @@ struct transaction
 	product purchased_item;
 	int quantity;
 
+	// Default constructor
+	transaction();
+	// Parameterized constructor
+	transaction(int t_number, Person customer, product purchased_item, int quantity);
 	//prints information about one transaction
 	std::string transaction_info();
 };

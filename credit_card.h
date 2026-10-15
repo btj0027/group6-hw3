@@ -11,6 +11,10 @@ struct credit_card
 	double limit;
 	double current_balance;
 
+	// default constructor
+	credit_card();
+	// parameterized constructor
+	credit_card(int number, double credit_limit, double balance);
 	//method to make a purchase against the 
 	//credit card limit. returns true if 
 	//successfull and false otherwise. 

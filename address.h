@@ -15,10 +15,14 @@ struct address
 	string city;
 	string state;
 	string zip;
-
-	//prints address information
+	// default constructor
+	address();
+	// parameterized constructor
+	address(string street, string city, string state, string zip);
 	string address_info();		
 };
 
 #endif
+
+
 

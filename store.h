@@ -1,6 +1,8 @@
 #include "product.h"
 #include "transaction.h"
 #include "person.h"
+#include <string>
+using std::string;
 
 #ifndef STORE_H
 #define STORE_H
@@ -56,7 +58,7 @@ class Store
 
 	//returns product at specified index in products_[]
 	//@index int 
-	product get_product(int); 
+	product get_product(int index); 
 
 	/* Adds a single transaction to the transactions_[]
  	 * at the next available position.
@@ -67,12 +69,12 @@ class Store
 
 	//returns transaction at specified index in products_[]
 	//@index int 
-	transaction get_transaction(int); 
+	transaction get_transaction(int index); 
 
 	//attempts to make a purchase using a person's credit
 	//card. If successfull returns true. Otherwise, returns false.
 	//@Person, @product, @int
-	bool make_purchase(Person, product, int);
+	bool make_purchase(Person customer, product item, int quantity);
 
 	//returns a string listing all products associated 
 	//with this store.
@@ -91,11 +93,11 @@ class Store
 	//searches through the transactions_[] and returns a
 	//string representing all transactions that belong to 
 	//a specific customer.
-	string purchase_history(Person);
+	string purchase_history(Person costumer);
 
 	//given a customer, returns the index in the customer_[]
 	//where that customer is located
-	int find_customer(Person cust);
+	int find_customer(Person customer);
 };
 
 #endif
