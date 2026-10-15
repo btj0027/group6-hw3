@@ -10,11 +10,12 @@ struct credit_card
 	int cc_number;  	//credit card number
 	double limit;
 	double current_balance;
+	std::string name;	//name of card holder
 
 	// default constructor
 	credit_card();
 	// parameterized constructor
-	credit_card(int number, double credit_limit, double balance);
+	credit_card(int number, std::string name, double credit_limit, double balance);
 	//method to make a purchase against the 
 	//credit card limit. returns true if 
 	//successfull and false otherwise. 

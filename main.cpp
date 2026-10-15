@@ -51,7 +51,7 @@ int main() {
             std::numeric_limits<std::streamsize>::max(), '\n'
         );
 
-        cards[i] = credit_card(number, limit, balance);
+        cards[i] = credit_card(number, card_name, limit, balance);
     }
 
     // Read people and associate them with credit cards by name.
@@ -78,13 +78,12 @@ int main() {
         credit_card card;
 
         for (int j = 0; j < num_cards; j++) {
-            // The cardholder names are in the same order as the people.
-            // Use the corresponding card for this person.
-            if (i == j) {
-                card = cards[j];
-                break;
-            }
-        }
+
+    		if (cards[j].name == name) {
+        		card = cards[j];
+        		break;
+    		}
+	}
 
         address person_address(street,address_line2, city, state, zip);
 
@@ -119,16 +118,13 @@ int main() {
     people_file.close();
     product_file.close();
 
-    cout << "Store info:" << endl << endl;
-    cout << store1.store_info() << endl << endl;
-
     // Random transactions between customers and products. (10-100)
 
 	// Seed the random number generator once.
 	std::srand(static_cast<unsigned int>(std::time(nullptr)));
 
-	// Generate between 11 and 99 transactions.
-	int num_transactions = 11 + std::rand() % 89;
+	// Generate between 10 and 100 transactions.
+	int num_transactions = 10 + std::rand() % 91;
 
 	for (int i = 0; i < num_transactions; i++) {
     	// Choose a random customer.

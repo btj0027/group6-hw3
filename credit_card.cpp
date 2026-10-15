@@ -7,10 +7,12 @@ credit_card::credit_card() {
     cc_number = 0;
     limit = 0.0;
     current_balance = 0.0;
+    this->name = "";
 }
 
-credit_card::credit_card(int number, double credit_limit, double balance) {
+credit_card::credit_card(int number, std::string name, double credit_limit, double balance) {
     cc_number = number;
+    this->name = name;
     limit = credit_limit;
     current_balance = balance;
 }
