@@ -18,7 +18,7 @@ struct address
 	// default constructor
 	address();
 	// parameterized constructor
-	address(string street, string city, string state, string zip);
+	address(string street, string address_line2, string city, string state, string zip);
 	string address_info();		
 };
 

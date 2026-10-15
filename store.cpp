@@ -106,16 +106,16 @@ bool Store::make_purchase(Person customer, product item, int quantity) {
         return false;
     }
 
-    double total = item.get_price() * quantity;
+    double total = item.price * quantity;
 
-    credit_card card = customers_[customer_index].get_credit_card();
+    credit_card card = customers_[customer_index].person_credit_card();
 
     if (card.current_balance + total > card.limit) {
         return false;
     }
 
     card.current_balance += total;
-    customers_[customer_index].set_credit_card(card);
+    customers_[customer_index].person_credit_card(card);
 
     transaction new_transaction(
         num_transactions_ + 1,
@@ -167,7 +167,7 @@ string Store::purchase_history(Person customer) {
     string info;
 
     for (int i = 0; i < num_transactions_; i++) {
-        if (transactions_[i].customer.get_name() == customer.get_name()) {
+        if (transactions_[i].customer.name() == customer.name()) {
             info += transactions_[i].transaction_info() + "\n";
         }
     }
@@ -177,7 +177,7 @@ string Store::purchase_history(Person customer) {
 
 int Store::find_customer(Person customer) {
     for (int i = 0; i < num_customers_; i++) {
-        if (customers_[i].get_name() == customer.get_name()) {
+        if (customers_[i].name() == customer.name()) {
             return i;
         }
     }

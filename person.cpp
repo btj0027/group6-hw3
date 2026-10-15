@@ -16,35 +16,35 @@ Person::Person(string name, string phone,
     person_credit_card_ = person_credit_card;
 }
 // Setter methods for Person class
-void Person::set_name(string name) {
+void Person::name(string name) {
     name_ = name;
 }
 
-void Person::set_phone(string phone) {
+void Person::phone(string phone) {
     phone_ = phone;
 }
 
-void Person::set_address(address person_address) {
+void Person::person_address(address person_address) {
     person_address_ = person_address;
 }
 
-void Person::set_credit_card(credit_card person_credit_card) {
+void Person::person_credit_card(credit_card person_credit_card) {
     person_credit_card_ = person_credit_card;
 }
 // Getter methods for Person class
-string Person::get_name() {
+string Person::name() {
     return name_;
 }
 
-string Person::get_phone() {
+string Person::phone() {
     return phone_;
 }
 
-address Person::get_address() {
+address Person::person_address() {
     return person_address_;
 }
 
-credit_card Person::get_credit_card() {
+credit_card Person::person_credit_card() {
     return person_credit_card_;
 }
 // Method to return formatted information about the person

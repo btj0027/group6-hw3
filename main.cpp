@@ -71,7 +71,6 @@ int main() {
         // Skip the blank address_line2 in people.txt.
         string address_line2;
         getline(people_file, address_line2);
-
         getline(people_file, city);
         getline(people_file, state);
         getline(people_file, zip);
@@ -87,7 +86,7 @@ int main() {
             }
         }
 
-        address person_address(street, city, state, zip);
+        address person_address(street,address_line2, city, state, zip);
 
         Person customer(name, phone, person_address, card);
 
@@ -133,10 +132,10 @@ int main() {
 
 	for (int i = 0; i < num_transactions; i++) {
     	// Choose a random customer.
-    	int customer_index = std::rand() % store1.get_num_customers();
+    	int customer_index = std::rand() % store1.num_customers();
 
     	// Choose a random product.
-    	int product_index = std::rand() % store1.get_num_products();
+    	int product_index = std::rand() % store1.num_products();
 
     	// Choose a quantity between 1 and 10.
     	int quantity = 1 + std::rand() % 10;
